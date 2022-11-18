@@ -1,6 +1,6 @@
 # Emma CLI Task
 
-##CLI Commands Task
+###CLI Commands Task
 
 1. Running a terminal
 
