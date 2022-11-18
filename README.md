@@ -275,213 +275,213 @@ Q: Search for the string “All” (case-sensitive). Go forward a few occurrence
 Total count 10 
 `grep All sonnets.txt | wc`
 
-Exercise 3
+#### Exercise 3
 
 Q: Using less and / (“slash”), find the sonnet that begins with the line “Let me not”. Are there any other occurrences of this string in the Sonnets?
 
-Less sonnets.txt
-/Let me not
+`less sonnets.txt`
+`/Let me not`
 Yes it occurs in Sonnet CXVI
 
-Exercise 4
+#### Exercise 4
 
 Q: By searching for the string “sort” in the man page for ls, discover the option to sort files by size. What is the command to display the long form of files sorted so the largest files appear at the bottom?
 
-ls -slr
+`ls -slr`
 
 
-4. Grepping
+### 4. Grepping
 
-Exercise 1
+#### Exercise 1
 
 Q: By searching man grep for “line number”, construct a command to find the line numbers in sonnets.txt where the string “rose” appears.
 
-grep -n rose sonnets.txt
+`grep -n rose sonnets.txt`
 
-Exercise 2
+#### Exercise 2
 
 Q: You should find that the last occurrences of “rose” is (via “roses”) on line 2203. Figure out how to go directly to this line when running less sonnets.txt.
 
-less sonnets.txt
-2203(Shift+G)
+`less sonnets.txt`
+`2203(Shift+G)`
 
-Exercise 3
+#### Exercise 3
 
 Q: By piping the output of grep to head, print out the first (and only the first) line in sonnets.txt containing “rose”.
 
-grep -n rose sonnets.txt | head -n 1
+`grep -n rose sonnets.txt | head -n 1`
 
-Line 4:That thereby beauty's rose might never die
+##### Line 4:That thereby beauty's rose might never die
 
-Exercise 4
+#### Exercise 4
 
 Q: In previous exercise, we saw two additional lines that case-insensitively matched “rose”. Execute a command confirming that both of the lines contain the string “Rose” (and not, e.g., “rOSe”).
 
-grep Rose sonnets.txt
+`grep Rose sonnets.txt`
 
-Exercise 5
+#### Exercise 5
 
 Q: Write a command confirming that the number of lines matching “Rose” but not matching “rose” is equal to the expected 2.
 
-grep Rose sonnets.txt | grep  rose | wc
+`grep Rose sonnets.txt | grep  rose | wc`
 
-5. Summary
+### 5. Summary
 
-Exercise 1
+#### Exercise 1
 
 Q: Pipe history to less to examine your command history. What was your 17th command?
 
-grep Rose sonnets.txt | grep  rose | wc
+`grep Rose sonnets.txt | grep  rose | wc`
 
-Exercise 2
+#### Exercise 2
 
 Q: By piping the output of history to wc, count how many commands you’ve executed so far.
 
-history|wc
+`history|wc`
 Total count is 106 
 
-Exercise 3
+#### Exercise 3
 
 Q: By piping the output of history to grep, determine the number for the last occurrence of curl.
 
-history | grep
+`history | grep`
 No output
 
-Exercise 4
+#### Exercise 4
 
 Q: Use the result from the previous exercise to re-run the last occurrence of curl.
 
 No Output
 
-Exercise 5
+#### Exercise 5
 
 Q: What do the O and L options in curl mean?
 
--O writes the output into a file called as remote file
--L signifies the location
+##### -O writes the output into a file called as remote file
+##### -L signifies the location
 
-Directories
+## Directories
 
-1. Structure
+### 1. Structure
 
-Exercise 1
+#### Exercise 1
 
 Q: Write in words how you might speak the directory ~/foo/bar.
 
-root slash foo slash bar
+##### root slash foo slash bar
 
-Exercise 2
+#### Exercise 2
 
 Q: In /Users/bill/sonnets, what is the home directory? What is the username? Which directory is deepest in the hierarchy?
 
-home directory is users and username is bill and deepest directory is sonnets.
+##### home directory is users and username is bill and deepest directory is sonnets.
 
-Exercise 3
+#### Exercise 3
 
 Q: For a user with username bill, how do /Users/bill/sonnets and ~/sonnets differ (if at all)?
 
-~/Users/bill/sonnets belongs to a user named as bill and  ~/sonnets belongs to  root folder.
+##### ~/Users/bill/sonnets belongs to a user named as bill and  ~/sonnets belongs to  root folder.
 
-2. Making directories
+### 2. Making directories
 
-Exercise 1
+#### Exercise 1
 
 Q: What is the option for making intermediate directories as required, so that you can create, e.g., ~/foo and ~/foo/bar with a single command?
 
--p
+`-p`
 
-Exercise 2
+#### Exercise 2
 
 Q: Use the option from the previous exercise to make the directory foo and, within it, the directory bar (i.e., ~/foo/bar) with a single command.
 
-mkdir -p ~/foo/bar
+`mkdir -p ~/foo/bar`
 
-Exercise 3
+#### Exercise 3
 
 Q: By piping the output of ls to grep, list everything in the home directory that contains the letter “o”.
 
-ls -a | grep o
+`ls -a | grep o`
 
-3. Navigating directories
+### 3. Navigating directories
 
-Exercise 1
+#### Exercise 1
 
 Q: How do the effects of cd and cd ~ differ (or do they)?
 
-There is no difference both the commands lead to root directory.
+##### There is no difference both the commands lead to root directory.
 
-Exercise 2
+#### Exercise 2
 
 Q: Change to text_directory, then change to second_directory using the "one directory up" double dot operator ... If these are directories don’t exist by default, you could either create them or use some other directories that already exist in you system.
 
 
-mkdir text_directory
-mkdir -p text_directory/second_directory
-cd text_directory
-cd second_directory
-cd ..
+`mkdir text_directory`
+`mkdir -p text_directory/second_directory`
+`cd text_directory`
+`cd second_directory`
+`cd ..`
 
-Exercise 3
+#### Exercise 3
 
 Q: From wherever you are, create an empty file called nil in text_directory using whatever method you wish.
 
-cd text_directory
-touch nil
+`cd text_directory`
+`touch nil`
 
-Exercise 4
+#### Exercise 4
 
 Q: Remove nil from the previous exercises using a different path from the one you used before. (In other words, if you used the path ~/text_directory before, use something like ../text_directory or /Users/username/text_directory.)
 
-rm /Users/danielanthony/text_directory/nil
+`rm /Users/danielanthony/text_directory/nil`
 
-4. Renaming, copying, deleting directories
+### 4. Renaming, copying, deleting directories
 
-Exercise 1
+#### Exercise 1
 
 Q: Make a directory foo with a subdirectory bar, then rename the subdirectory to baz.
 
-mkdir -p ~/foo/bar
-mv ~/foo/bar ~/foo/baz
+`mkdir -p ~/foo/bar`
+`mv ~/foo/bar ~/foo/baz`
 
-Exercise 2
+#### Exercise 2
 
 Q: Copy all the files in text_files, with directory, into foo.
 
-cp -r text_directory foo
+`cp -r text_directory foo`
 
-Exercise 3
+#### Exercise 3
 Q: Copy all the files in text_files, without directory, into bar.
 
-cp -r foo/ bar 
+`cp -r foo/ bar` 
 
-Exercise 4
+#### Exercise 4
 
 Q: Remove foo and everything in it using a single command.
 
-rm -rf foo
+`rm -rf foo`
 
-5. Summary
+### 5. Summary
 
-Exercise 1
+#### Exercise 1
 
 Q: Using a single command-line command, make a directory foo, change into it, create a file bar with content baz, print out bar's contents, and then cd back to your home directory.
 
-mkdir foo && cd foo && touch baz > bar && cd
+`mkdir foo && cd foo && touch baz > bar && cd`
 
-Exercise 2
+#### Exercise 2
 
 Q: What happens when you run the previous command again? How many of the commands executed? Why?
 
-It throws an error mkdir: foo: File exists (because the directory already exists).
+##### It throws an error mkdir: foo: File exists (because the directory already exists).
 
-Exercise 3
+#### Exercise 3
 
 Q: Explain why the command rm -rf / is unbelievably dangerous, and why you should never type it into a terminal window, not even as a joke.
 
--f flag force removes files with out any warning.
+##### -f flag force removes files with out any warning.
 
-Exercise 4
+#### Exercise 4
 
 Q: How can the previous command be made even more dangerous? (This command is so dangerous you shouldn’t even think it, much less type it.)
 
-It could be made dangerous if given admin access like typing sudo allows anyone to use it.
+##### It could be made dangerous if given admin access like typing sudo.
